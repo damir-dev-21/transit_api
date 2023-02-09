@@ -3,6 +3,7 @@ const cors = require('cors')
 const path = require('path')
 const morgan = require('morgan')
 const api = require('./routes/api')
+const { goods } = require('./routes/auth/auth.controller')
 const app = express()
 
 app.use(cors({
@@ -17,7 +18,7 @@ app.use(express.static(path.join(__dirname,"..","public")))
 app.use('/sklad',api)
 
 app.get('/1',async(req,res)=>{
-   createTables()
+   goods()
 //    getProducts()
 //    getAllProducts()
 })
